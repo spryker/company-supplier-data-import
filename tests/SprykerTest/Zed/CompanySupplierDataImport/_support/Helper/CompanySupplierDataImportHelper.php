@@ -18,11 +18,6 @@ use Propel\Runtime\ActiveQuery\Criteria;
 
 class CompanySupplierDataImportHelper extends Module
 {
-    /**
-     * @param string $sku
-     *
-     * @return bool
-     */
     public function isProductCreated(string $sku): bool
     {
         $productQuery = $this->getPropelProductQuery();
@@ -31,17 +26,11 @@ class CompanySupplierDataImportHelper extends Module
         return $productQuery->exists();
     }
 
-    /**
-     * @return void
-     */
     public function ensureDatabaseTableCompanySupplierToProductIsEmpty(): void
     {
         $this->getPropelCompanySupplierToProductQuery()->find()->delete();
     }
 
-    /**
-     * @return void
-     */
     public function ensureDatabaseTableCompanyTypeIsEmpty(): void
     {
         $colPhpName = SpyCompanyTableMap::getTableMap()
@@ -52,9 +41,6 @@ class CompanySupplierDataImportHelper extends Module
         $this->getPropelCompanyTypeQuery()->find()->delete();
     }
 
-    /**
-     * @return void
-     */
     public function ensureDatabaseTablePriceProductIsEmpty(): void
     {
         $priceProductQuery = $this->getPropelPriceProductQuery();
@@ -65,18 +51,12 @@ class CompanySupplierDataImportHelper extends Module
         }
     }
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTableCompanySupplierToProductContainsData(): void
     {
         $companySupplierToProductQuery = $this->getPropelCompanySupplierToProductQuery();
         $this->assertTrue(($companySupplierToProductQuery->count() > 0), 'Expected at least one entry in the database table but database table is empty.');
     }
 
-    /**
-     * @return void
-     */
     public function assertCompanyTypeImported(): void
     {
         $companyQuery = $this->getPropelCompanyQuery();
@@ -84,9 +64,6 @@ class CompanySupplierDataImportHelper extends Module
         $this->assertTrue(($companyQuery->count() > 0), 'Expected at least one entry in the database table but database table is empty.');
     }
 
-    /**
-     * @return void
-     */
     public function assertCompanySupplierProductPriceImported(): void
     {
         $priceProductQuery = $this->getPropelPriceProductQuery();
@@ -94,41 +71,26 @@ class CompanySupplierDataImportHelper extends Module
         $this->assertTrue(($priceProductQuery->count() > 0), 'Expected at least one entry in the database table but database table is empty.');
     }
 
-    /**
-     * @return \Orm\Zed\CompanySupplier\Persistence\SpyCompanySupplierToProductQuery
-     */
     protected function getPropelCompanySupplierToProductQuery(): SpyCompanySupplierToProductQuery
     {
         return SpyCompanySupplierToProductQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\CompanySupplier\Persistence\SpyCompanyTypeQuery
-     */
     protected function getPropelCompanyTypeQuery(): SpyCompanyTypeQuery
     {
         return SpyCompanyTypeQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Company\Persistence\SpyCompanyQuery
-     */
     protected function getPropelCompanyQuery(): SpyCompanyQuery
     {
         return SpyCompanyQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Product\Persistence\SpyProductQuery
-     */
     protected function getPropelProductQuery(): SpyProductQuery
     {
         return SpyProductQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\PriceProduct\Persistence\SpyPriceProductQuery
-     */
     protected function getPropelPriceProductQuery(): SpyPriceProductQuery
     {
         return SpyPriceProductQuery::create();

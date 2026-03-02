@@ -25,15 +25,6 @@ use Spryker\Zed\DataImport\Business\Model\DataImporterInterface;
  */
 class CompanySupplierDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
-
-    /**
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function createCompanyTypeDataImport(
         ?DataImporterConfigurationTransfer $dataImporterConfigurationTransfer = null
     ): DataImporterInterface {
@@ -50,15 +41,6 @@ class CompanySupplierDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
-
-    /**
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function createCompanySupplierDataImport(
         ?DataImporterConfigurationTransfer $dataImporterConfigurationTransfer = null
     ): DataImporterInterface {
@@ -76,15 +58,6 @@ class CompanySupplierDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
-
-    /**
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function createCompanySupplierProductPriceDataImport(
         ?DataImporterConfigurationTransfer $dataImporterConfigurationTransfer = null
     ): DataImporterInterface {
@@ -104,33 +77,21 @@ class CompanySupplierDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierDataImport\Business\Model\Step\CompanyKeyToIdCompanyStep
-     */
     protected function createCompanyKeyToIdCompanyStep(): CompanyKeyToIdCompanyStep
     {
         return new CompanyKeyToIdCompanyStep();
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierDataImport\Business\Model\Step\ConcreteSkuToIdProductStep
-     */
     protected function createConcreteSkuToIdProductStep(): ConcreteSkuToIdProductStep
     {
         return new ConcreteSkuToIdProductStep();
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierDataImport\Business\Model\Step\StoreToIdStoreStep
-     */
     protected function createStoreToIdStoreStep(): StoreToIdStoreStep
     {
         return new StoreToIdStoreStep();
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierDataImport\Business\Model\Step\CurrencyToIdCurrencyStep
-     */
     protected function createCurrencyToIdCurrencyStep(): CurrencyToIdCurrencyStep
     {
         return new CurrencyToIdCurrencyStep();

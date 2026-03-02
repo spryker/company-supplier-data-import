@@ -63,9 +63,6 @@ class CompanySupplierDataImportConfig extends DataImportConfig
         return $this->buildImporterConfiguration($moduleDataImportDirectory . 'company_supplier_product_price.csv', static::IMPORT_TYPE_PRODUCT_PRICE);
     }
 
-    /**
-     * @return string
-     */
     protected function getModuleRoot(): string
     {
         $moduleRoot = realpath(
