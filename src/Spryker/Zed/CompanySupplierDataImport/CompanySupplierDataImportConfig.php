@@ -13,16 +13,22 @@ use Spryker\Zed\DataImport\DataImportConfig;
 class CompanySupplierDataImportConfig extends DataImportConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_COMPANY_TYPE = 'company-type';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_COMPANY_SUPPLIER = 'company-supplier';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_PRODUCT_PRICE = 'company-supplier-product-price';
